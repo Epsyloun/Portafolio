@@ -1,0 +1,32 @@
+@import 'vars.scss';
+*{
+	margin: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+a{
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+@function calculateRem($size){
+	$remSize: calc($size / 16px);
+	@return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+	font-size: $size;
+	font-size: calculateRem($size);
+	line-height: calculateRem($size)*1.5;
+}
+@mixin font-family-primary {
+  font-family: 'Bebas Neue', cursive;
+	color: $color-third;
+}
+@mixin font-family-secondary {
+  font-family: 'Rubik', sans-serif;
+	color: $color-auxiliary;
+}
+
+@import 'transitions.scss';
+@import 'hero.scss';
+@import 'projects.scss';

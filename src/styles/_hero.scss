@@ -1,0 +1,54 @@
+.hero{
+  display: grid;
+  background-color: $color-background;
+  width: 100%;
+  height: 100vh;
+  grid-template: 3fr 3fr 1fr 1fr 1fr/ 1fr 5fr 1fr ;
+  row-gap: 20px;
+  &__title{
+    justify-self: center;
+    align-self: end;
+    grid-area: 1/2/2/3;
+    opacity: 0;
+    @include font-family-primary;
+    @include font-size(52px);
+    @include appear(0.5s);
+  }
+  &__subtitle{
+    grid-area: 3/2/4/3;
+    text-align: center;
+    opacity: 0;
+    @include appear(1.5s);
+  }
+  &__title--par{
+    text-align: center;
+    @include font-family-secondary;
+  }
+  &__title--sub{
+    text-align: center;
+    @include font-family-secondary;
+    color: $color-third;
+  }
+  &__icon{
+    opacity: 0;
+    grid-area: 4/2/5/3;
+    place-self: center;
+    &--svg{
+      color: $color-secondary;
+      @include bounce;
+    }
+    @include appear(2s);
+  }
+}
+.hero-circle{
+  grid-area: 2/2/3/3;
+  &__img{
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    place-self: center;
+    border: 5px solid $color-secondary;
+    opacity: 0;
+    @include appear(1s);
+  }
+}
