@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 	scroll-behavior: smooth;
 }
-a{
+a, button{
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
@@ -31,3 +31,4 @@ a{
 @import 'transitions.scss';
 @import 'hero.scss';
 @import 'projects.scss';
+@import 'modalProject.scss';

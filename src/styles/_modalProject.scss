@@ -1,0 +1,14 @@
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  z-index: 1;
+  background-color: red;
+  // background-image: url('../assets/images/low-poly-hero.svg');
+  width: 100%;
+  min-height: 100vh;
+  grid-template: 1fr 80px repeat(3, 5fr)  1fr/ 1em 1fr 1em;
+  row-gap: 1.5em;
+  transition: 0.5s;
+}

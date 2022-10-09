@@ -3,9 +3,6 @@ import person from "@images/me.jpeg";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 function Hero() {
-  function goProjects(){
-    alert('iriamos pa abajo')
-  }
   return (
     <section id='hero' className="hero">
       <h1 className="hero__title">WEB PORTFOLIO</h1>
