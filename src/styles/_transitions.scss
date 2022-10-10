@@ -4,6 +4,10 @@
 @mixin appear($delay){
   animation: appear-animation 0.5s ease-out $delay forwards;
 }
+@mixin disappear($delay){
+  animation: disappear-animation 0.5s ease-out $delay forwards;
+}
+
 @keyframes bounce-animation {
   0%{
     transform: translateY(0px);
@@ -24,5 +28,16 @@
   100%{
     opacity: 1;
     transform: scale(100%);
+  }
+}
+
+@keyframes disappear-animation {
+  0%{
+    opacity: 1;
+    transform: scale(100%);
+  }
+  100%{
+    opacity: 0;
+    transform: scale(50%);
   }
 }

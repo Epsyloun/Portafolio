@@ -8,7 +8,7 @@ function Home() {
     <>
       <Hero/>
       <Projects/>
-      <ModalProject title2="asd" subtitle2="asd" waveswavesFlag={false}/>
+      <ModalProject title="asd" subtitle="asd" waveswavesFlag={false}/>
     </>
   );
 }

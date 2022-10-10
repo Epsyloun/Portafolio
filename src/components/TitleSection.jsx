@@ -1,5 +1,5 @@
 import React from 'react'
-import waves from '@images/waves.svg'
+import waves from '@images/mobile/waves-mobile.svg'
 
 function TitleSection({title, subtitle, wavesFlag}) {
   return (
