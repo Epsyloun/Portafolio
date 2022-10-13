@@ -3,13 +3,70 @@
   position: fixed;
   top: 0;
   z-index: 1;
-  background-color: red;
-  // background-image: url('../assets/images/low-poly-hero.svg');
+  background-image: url('../assets/images/mobile/blob-scene-mobile.svg');
   width: 100%;
-  min-height: 100vh;
-  grid-template: 1fr 80px repeat(3, 5fr)  1fr/ 1em 1fr 1em;
-  row-gap: 1.5em;
+  height: 100vh;
+  object-fit: cover;
+  grid-template: 50px 40px 40px repeat(4, minmax(10vh, auto))  1fr/ 1fr 40px  10fr 40px 1fr;
+  row-gap: 1em;
   transition: 0.5s;
-  overflow: auto;
+  overflow-X: hidden;
   animation: appear-animation 0.5s;
+  &__close{
+    grid-area: 2/2/3/3;
+    border-radius: 20%;
+    border: solid 3px white;
+    color: $color-secondary;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  & .projects__title{
+    grid-area: 2/3/4/5;
+  }
+  &__slide{
+
+    border-radius: 10px;
+    opacity: 0;
+    height: 10vh;
+    transition: 0.5s ease-in;
+  }
+  &__slide:hover{
+    height: 30vh;
+  }
+}
+
+.slide{
+  &__1{
+    grid-area: 4/2/5/4;
+    @include left-slide(0.5s);
+  }
+  &__2{
+    background-color: red;
+    grid-area: 5/3/6/5;
+    @include right-slide(1s);
+  }
+  &__3{
+    background-color: red;
+    grid-area: 6/2/7/4;
+    @include left-slide(1.5s);
+  }
+  &__4{
+    background-color: red;
+    grid-area: 7/3/8/5;
+    @include right-slide(2s);
+  }
+  &__content{
+    display: grid;
+    height: 50%;
+    width: 100%;
+    grid-template-areas: 1fr 5fr/ 4fr 6fr 2fr;
+    border-radius: 20px;
+    background-color: blue;
+    transition: 0.5s;
+  }
+  &__content:hover{
+
+  }
 }

@@ -12,9 +12,6 @@ function ProjectCard({category, img, icon, description}) {
     body.style.height = "100%";
     body.style.overflow = "hidden";
   }
-  function closeModal(title){
-    
-  }
   return (
   <>
     <div className={`projects__${category} projects-category`}>

@@ -27,12 +27,15 @@
   }
   &__Web{
     grid-area: 3/2/4/3;
+    @include appear(0.5s);
   }
   &__Design{
     grid-area: 4/2/5/3;
+    @include appear(1s);
   }
   &__Mobile{
     grid-area: 5/2/6/3;
+    @include appear(1.5s);
   }
   &-category{
       display: grid;
@@ -44,6 +47,7 @@
       box-shadow: 6px 10px 5px 0px rgba(0,0,0,0.75);
       -webkit-box-shadow: 6px 10px 5px 0px rgba(0,0,0,0.75);
       -moz-box-shadow: 6px 10px 5px 0px rgba(0,0,0,0.75);
+      opacity: 0;
       @include font-size(22px);
       @include font-family-secondary;
       img{

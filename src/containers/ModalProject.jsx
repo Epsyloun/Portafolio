@@ -1,4 +1,5 @@
 import React from 'react';
+import ProjectSlide from '../components/ProjectSlide';
 import TitleSection from '../components/TitleSection';
 
 function ModalProject({title, subtitle}) {
@@ -17,7 +18,11 @@ function ModalProject({title, subtitle}) {
     <>
       <section className='modal'>
         <TitleSection title={title} subtitle={subtitle} />
-        <button onClick={()=>closeModal(title)}>cerrar cx</button>
+        <button className='modal__close' onClick={()=>closeModal(title)}>X</button>
+        <ProjectSlide num="1"/>
+        <ProjectSlide num="2"/>
+        <ProjectSlide num="3"/>
+        <ProjectSlide num="4"/>
       </section>
     </>
   );
