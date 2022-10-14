@@ -3,37 +3,40 @@
   position: fixed;
   top: 0;
   z-index: 1;
-  background-image: url('../assets/images/mobile/blob-scene-mobile.svg');
+  background-image: url('../assets/images/desktop/blob-scene-desktop.svg');
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   object-fit: cover;
-  grid-template: 50px 40px 40px repeat(4, minmax(10vh, auto))  1fr/ 1fr 40px  10fr 40px 1fr;
+  grid-template: 40px 40px 40px repeat(4, minmax(10vh, auto))  1fr/ 1fr 40px  10fr 40px 1fr;
   row-gap: 1em;
   transition: 0.5s;
   overflow-X: hidden;
   animation: appear-animation 0.5s;
   &__close{
     grid-area: 2/2/3/3;
-    border-radius: 20%;
-    border: solid 3px white;
-    color: $color-secondary;
+    border-radius: 10px;
+    border: solid 3px $color-third;
+    color: $color-third;
     background-color: white;
+    font-weight: bolder;
+    background-color: transparent;
     width: 40px;
     height: 40px;
     cursor: pointer;
   }
   & .projects__title{
-    grid-area: 2/3/4/5;
+    grid-area: 2/2/4/5;
   }
   &__slide{
-
+    display: grid;
     border-radius: 10px;
     opacity: 0;
     height: 10vh;
     transition: 0.5s ease-in;
   }
   &__slide:hover{
-    height: 30vh;
+    height: 40vh;
+    border: 3px solid $color-secondary;
   }
 }
 
@@ -43,30 +46,148 @@
     @include left-slide(0.5s);
   }
   &__2{
-    background-color: red;
     grid-area: 5/3/6/5;
     @include right-slide(1s);
   }
   &__3{
-    background-color: red;
     grid-area: 6/2/7/4;
     @include left-slide(1.5s);
   }
   &__4{
-    background-color: red;
     grid-area: 7/3/8/5;
     @include right-slide(2s);
   }
   &__content{
     display: grid;
-    height: 50%;
+    grid-template:1em 1fr 2fr 1fr 1em/1em 1fr 3fr 1fr 1em;
+    overflow: hidden;
+    grid-area: 1/1/2/2;
     width: 100%;
-    grid-template-areas: 1fr 5fr/ 4fr 6fr 2fr;
-    border-radius: 20px;
-    background-color: blue;
+    border-radius: 10px;
     transition: 0.5s;
+    cursor: pointer;
   }
-  &__content:hover{
+  &__img{
+    grid-area: 1/1/6/6;
+    object-fit: cover;
+    filter: blur(8px) brightness(0.3);
+    z-index: -1;
+  }
+  &__icon{
+    grid-area: 2/2/3/3;
+    place-self: center;
+    color: $color-third;
+  }
+  &__title{
+    grid-area: 2/3/3/5;
+    place-self: center;
+    opacity: 0;
+    @include font-size(32px);
+    @include font-family-primary;
+    @include appear(0s);
+  }
+  &__desc{
+    display: none;
+    grid-area: 3/3/4/5;
+    place-self: top;
+    transition: 0.5s;
+    opacity: 0;
+    @include font-size(28px);
+    @include font-family-secondary;
+    @include appear(0.5s);
+  }
+
+  &__git{
+    display: none;
+    grid-area: 4/3/5/5;
+    justify-self: start;
+    align-self: center;
+    color: $color-secondary;
+    opacity: 0;
+    @include appear(0.5s);
+  }
+
+  &__button{
+    display: none;
+    grid-area: 4/3/5/5;
+    justify-self: end;
+    align-self: center;
+    width: 50%;
+    height: 50%;
+    border-radius: 20px;
+    border: none;
+    background-color: $color-secondary;
+    transition: 0.2s;
+    opacity: 0;
+    @include font-size(22px);
+    @include font-family-primary;
+    @include appear(0.5s);
+  }
+
+  &__content:hover > &__desc{
+    display: block;
+  }
+  &__content:hover > &__button{
+    display: block;
+  }
+  &__content:hover > &__git{
+    display: block;
+  }
+  &__button:active{
+    background-color: $color-primary;
+  }
+}
+
+
+@media (min-width: 600px) {
+
+}
+@media (min-width: 768px) {
+  .slide{
+    &__icon{
+      grid-area: 2/2/3/3;
+      place-self: center;
+    }
+    &__title{
+      grid-area: 2/3/3/5;
+      justify-self: start;
+      align-self: center;
+    }
+    &__desc{
+      grid-area: 3/3/4/5;
+    }
 
   }
+}
+@media (min-width: 992px) {
+  .slide{
+    &__icon{
+      grid-area: 2/3/3/5;
+      justify-self: start;
+      align-self: center;
+    }
+    &__title{
+      grid-area: 2/3/3/5;
+      padding-left: 50px;
+      justify-self: start;
+      align-self: center;
+    }
+    &__desc{
+      grid-area: 3/3/4/5;
+    }
+    &__git{
+      grid-area: 4/3/4/4;
+      justify-self: end;
+      align-self: center;
+      padding-right: 50px;
+    }
+    &__button{
+      display: none;
+      grid-area: 4/4/5/5;
+      width: 100%;
+    }
+  }
+}
+@media (min-width: 1200px) {
+
 }
